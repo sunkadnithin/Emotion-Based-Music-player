@@ -9,7 +9,8 @@ import os
 global NOTIFY
 global EVENT_OBJ
 from pygame import mixer
-
+import sys
+import inference
 
 class MyDialog:
     obj_flag = False
@@ -64,7 +65,8 @@ def inference_callback():
         msg = "Do you want to check agian"
         if messagebox.askyesno(message=msg):
             button_off()
-            exec(open("inference.py").read())
+            inference.inference()
+            #exec(open("inference.py").read())
             button_on()
         else:
             break
