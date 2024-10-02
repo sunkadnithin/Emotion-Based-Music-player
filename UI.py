@@ -1,7 +1,7 @@
 import tkinter
 from tkinter import *
 from tkinter import messagebox
-# import data_training
+import data_training
 import data_collection
 #from playsound import playsound
 import os
@@ -57,7 +57,8 @@ def collection_callback():
     return
 def training_callback():
     button_off()
-    exec(open("data_training.py").read())
+    data_training.train()
+    # exec(open("data_training.py").read())
     button_on()
 
 def inference_callback():
